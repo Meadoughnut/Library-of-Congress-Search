@@ -7,18 +7,25 @@
   <title>Results | Library of Congress Search</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/jass.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    
+  <link rel="stylesheet" href="./assets/css/searchresult.css" />
 </head>
 
 <body>
 
-  <div class="flex-row align-start align-stretch-md align-content-start align-content-stretch-md min-100-vh bg-primary">
-    <div class="col-12 col-md-3 bg-light p-3">
-      <h1 class="text-primary">Library of Congress Search Engine</h1>
-      <form id="search-form" class="mb-2">
-        <input id="search-input" class="form-input w-100" type="text" placeholder="Search!">
-        <select id="format-input" class="form-input w-100">
+  <div class="results-page-wrapper flex-row align-start align-stretch-md align-content-start align-content-stretch-md min-100-vh bg-primary">
+    
+    <!-- Search Sidebar -->
+    <div class="search-sidebar col-12 col-md-3 bg-light p-3">
+      <nav>
+      <h1 class="search-sidebar-title text-primary">Library of Congress Search Engine</h1>
+      <a href="./index.html" class="back-button btn btn-block btn-danger">&larr; Go back</a>
+    </nav>
+
+      <form id="search-form-results" class="search-form mb-2">
+        <input id="search-query-input" class="search-input-field form-input w-100" type="text" placeholder="Search!">
+        
+        <select id="search-format-select" class="search-format-dropdown form-input w-100">
           <option value="" disabled selected>Select a format...</option>
           <option value="maps">Maps</option>
           <option value="audio">Audio</option>
@@ -29,19 +36,20 @@
           <option value="notated-music">Notated Music</option>
           <option value="websites">Websites</option>
         </select>
-        <button class="btn btn-info btn-block">Search</button>
+
+        <button class="search-button btn btn-info btn-block">Search</button>
       </form>
 
-      <a href="./index.html" class="btn btn-block btn-danger">&larr; Go back.</a>
+      
+
+    <!-- Results Content -->
+    <div class="results-content col-12 col-md-9 p-3 text-light">
+      <h2 class="results-title">Showing results for <span id="search-result-text"></span></h2>
+      <div id="search-results-container"></div>
     </div>
 
-    <div class="col-12 col-md-9 p-3 text-light">
-      <h2>Showing results for <span id="result-text"></span></h2>
-      <div id="result-content"></div>
-    </div>
   </div>
 
-  
 </body>
 
 </html>
