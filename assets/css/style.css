@@ -13,101 +13,83 @@ body {
   align-items: center;
   min-height: 100vh;
   background-image: url('https://www.transparenttextures.com/patterns/snow.png'); /* Subtle texture */
-  transition: background 0.5s ease;
 }
 
-/* Wrapper for the search engine */
-.search-engine-wrapper {
+/* Wrapper to center content and handle layout */
+.flex-row {
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Column layout for mobile */
   justify-content: center;
-  background-color: #e3f2fd; /* Light blue background */
-  transition: background-color 0.5s ease;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e3f2fd;
 }
 
-/* Main container for the search engine */
-.search-engine-container {
+.col-12 {
+  width: 100%;
+}
+
+.col-md-9 {
   width: 90%;
+  max-width: 800px;
   background: white;
   padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-engine-container:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Title Styling */
-.search-engine-title {
+.text-primary {
   font-family: 'Merriweather', serif;
   color: #0d47a1;
   font-size: 1.8em;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, #1976d2, #0d47a1);
-  background-clip: text;
-  color: transparent;
-  animation: gradientMove 5s ease-in-out infinite;
 }
 
-/* Animate the gradient in the title */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-/* Paragraph Styling */
+/* Description Paragraph Styling */
 .search-engine-description, .search-engine-info {
   color: #1976d2;
   font-size: 1.1em;
   margin-bottom: 15px;
   line-height: 1.6;
-  transition: color 0.3s ease;
 }
 
-.search-engine-description:hover, .search-engine-info:hover {
-  color: #0d47a1;
-}
-
-/* Form styling */
-#library-search-form {
+/* Search Form */
+#search-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   margin-top: 20px;
 }
 
-/* Input and Select Fields */
-.search-input, .search-format-select {
+.form-input {
   padding: 12px;
   font-size: 1.1em;
   border: 2px solid #1976d2;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #ffffff;
-  transition: all 0.4s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.search-input:focus, .search-format-select:focus {
+.form-input:focus {
   border-color: #0d47a1;
   background-color: #e0f7fa;
   box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
   outline: none;
 }
 
-.search-format-select {
+/* Select box */
+#format-input {
   appearance: none;
   background: url('data:image/svg+xml;utf8,<svg fill="navy" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z"/></svg>') no-repeat right 10px center;
   padding-right: 40px;
 }
 
-/* Button styling */
-.search-submit-button {
-  padding: 15px;
+/* Button */
+.btn {
+  padding: 12px;
   font-size: 1.2em;
   background: linear-gradient(135deg, #1a237e, #0d47a1, #1976d2);
   color: white;
@@ -116,58 +98,54 @@ body {
   cursor: pointer;
   transition: all 0.4s ease;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.search-submit-button:hover {
+.btn:hover {
   background: linear-gradient(135deg, #1976d2, #64b5f6);
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.search-submit-button:active {
+.btn:active {
   transform: translateY(0);
 }
 
-/* Media Queries for Larger Screens (tablets and desktops) */
+/* Media Queries for larger screens */
 @media (min-width: 768px) {
-  .search-engine-container {
+  .col-md-9 {
     width: 70%;
     padding: 30px;
   }
 
-  .search-engine-title {
+  .text-primary {
     font-size: 2em;
   }
 
   .search-engine-description, .search-engine-info {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
-  .search-input, .search-format-select, .search-submit-button {
+  .form-input, .btn {
     font-size: 1.2em;
-    padding: 12px;
   }
 }
 
 @media (min-width: 1024px) {
-  .search-engine-container {
-    max-width: 800px;
+  .col-md-9 {
+    width: 60%;
     padding: 40px;
     border-radius: 20px;
   }
 
-  .search-engine-title {
+  .text-primary {
     font-size: 2.5em;
-    margin-bottom: 20px;
   }
 
   .search-engine-description, .search-engine-info {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1.3em;
   }
 
-  .search-submit-button {
+  .btn {
     font-size: 1.3em;
     padding: 14px;
   }

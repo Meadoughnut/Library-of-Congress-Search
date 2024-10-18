@@ -7,27 +7,23 @@
   <title>Library of Congress Search</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
-    
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/jass.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-  <div class="search-engine-wrapper flex-row align-center justify-center min-100-vh bg-primary">
-    <div class="search-engine-container col-12 col-md-9 flex-column align-center bg-light p-5">
-      <h1 class="search-engine-title text-primary">Explore the Library of Congress Collections</h1>
-
-      <!-- New paragraph to explain the Library of Congress Search Engine -->
+  <div class="flex-row align-center justify-center min-100-vh bg-primary">
+    <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
+      <h1 class="text-primary">Library of Congress Search Engine</h1>
       <p class="search-engine-description">
         Welcome to the Library of Congress Search Engine! Here, you can explore a vast collection of historical documents,
         maps, photographs, films, and other resources from one of the largest libraries in the world. Use the search form below
         to find exactly what you're looking for, whether it's manuscripts, audio recordings, videos, or more. Discover new insights
         and knowledge with just a few clicks.
       </p>
-
-      <form id="library-search-form" class="search-form w-100">
-        <input id="library-search-input" class="search-input w-100" type="text" placeholder="Search the collections...">
-        
-        <select id="library-format-select" class="search-format-select w-100">
+      <form id="search-form" class="form w-100">
+        <input id="search-input" class="form-input w-100" type="text" placeholder="Search!">
+        <select id="format-input" class="form-input w-100">
           <option value="" disabled selected>Select a format...</option>
           <option value="maps">Maps</option>
           <option value="audio">Audio</option>
@@ -38,17 +34,16 @@
           <option value="notated-music">Notated Music</option>
           <option value="websites">Websites</option>
         </select>
-
-        <button class="search-submit-button btn btn-info btn-block">Start Searching</button>
+        <button class="btn btn-info btn-block">Click Me</button>
       </form>
-
-      <!-- Another informative section to make it more user-friendly -->
       <p class="search-engine-info">
         You can narrow your search by selecting a format from the dropdown above. Whether you're searching for historical maps,
         music sheets, or even early film footage, the Library of Congress houses a rich and diverse collection.
       </p>
     </div>
   </div>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

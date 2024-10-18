@@ -1,163 +1,189 @@
 /* Basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/snow.png'); /* Light texture */
+}
+
+/* Main Wrapper for Results Page */
+.flex-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e3f2fd;
+}
+
+/* Sidebar Styling */
+.col-12 {
+  width: 100%;
+}
+
+.col-md-3 {
+  width: 100%;
+  max-width: 300px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.search-sidebar-title {
+  color: #0d47a1;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.back-button {
+  
+  color:#2f5a9a;
+  font-size: 1.1em;
+ 
+  padding: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.4s ease;
+  width: 100%;
+  margin-top: 20px; /* Added margin to prevent overlap */
+  margin-bottom: 10px;
+}
+
+.back-button:hover {
+  background: #0d47a1;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+#search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adjusted gap for better spacing */
+}
+
+.form-input {
+  padding: 12px;
+  font-size: 1.1em;
+  border: 2px solid #1976d2;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #0d47a1;
+  background-color: #e0f7fa;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
+  outline: none;
+}
+
+#format-input {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="navy" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z"/></svg>') no-repeat right 10px center;
+  padding-right: 40px;
+}
+
+/* Search Button */
+.btn-info {
+  padding: 14px; /* Increased padding for a more comfortable touch */
+  font-size: 1.2em;
+  background: linear-gradient(135deg, #1a237e, #0d47a1, #1976d2);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Added margin to prevent overlap */
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #1976d2, #64b5f6);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-info:active {
+  transform: translateY(0);
+}
+
+/* Results Content Styling */
+.col-md-9 {
+  width: 100%;
+  background: #0d47a1;
+  padding: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+#result-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  color: #0d47a1;
+  min-height: 100px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Added subtle shadow for refinement */
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+  .flex-row {
+    flex-direction: row;
   }
-  
-  body {
-    font-family: 'Fira Sans', sans-serif;
-    background-color: #f0f4f8; /* Light background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('https://www.transparenttextures.com/patterns/snow.png'); /* Subtle texture */
+
+  .col-md-3 {
+    width: 30%;
   }
-  
-  /* Results Page Wrapper */
-  .results-page-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #e3f2fd;
+
+  .col-md-9 {
+    width: 70%;
+    margin-top: 0;
+    padding: 30px;
   }
-  
-  /* Search Sidebar */
-  .search-sidebar {
-    width: 100%;
-    background: #ffffff;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 2em;
   }
-  
-  .search-sidebar-title {
-    color: #0d47a1;
-    font-size: 1.8em;
-    margin-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  .col-md-3 {
+    padding: 40px;
   }
-  
-  /* Back Button */
-  .back-button {
-    background: #1f5af0;
-    color: white;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 50px;
-    padding: 12px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.4s ease;
-    width: 100%;
+
+  .col-md-9 {
+    padding: 40px;
   }
-  
-  .back-button:hover {
-    background: #4e79e6;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    font-size: 2.5em;
   }
-  
-  /* Search Form */
-  .search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+
+  #result-content {
+    padding: 25px;
   }
-  
-  .search-input-field, .search-format-dropdown {
-    padding: 12px;
-    font-size: 1.1em;
-    border: 2px solid #1976d2;
-    border-radius: 5px;
-    background-color: #ffffff;
-    transition: all 0.3s ease;
-  }
-  
-  .search-input-field:focus, .search-format-dropdown:focus {
-    border-color: #0d47a1;
-    background-color: #e0f7fa;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
-    outline: none;
-  }
-  
-  /* Search Button */
-  .search-button {
-    background: linear-gradient(135deg, #1a237e, #0d47a1, #1976d2);
-    color: white;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 50px;
-    padding: 12px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    width: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-button:hover {
-    background: linear-gradient(135deg, #1976d2, #64b5f6);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  .search-button:active {
-    transform: translateY(0);
-  }
-  
-  /* Results Content */
-  .results-content {
-    width: 100%;
-    background: #0d47a1;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
-  .results-title {
-    font-size: 1.6em;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-  
-  #search-results-container {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    color: #0d47a1;
-  }
-  
-  /* Media Queries for larger screens */
-  @media (min-width: 768px) {
-    .results-page-wrapper {
-      flex-direction: row;
-    }
-  
-    .search-sidebar {
-      width: 30%;
-    }
-  
-    .results-content {
-      width: 70%;
-      padding: 30px;
-    }
-  
-    .results-title {
-      font-size: 2em;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .results-title {
-      font-size: 2.5em;
-    }
-  
-    .search-sidebar {
-      padding: 40px;
-    }
-  
-    .results-content {
-      padding: 40px;
-    }
-  }
-  
+}
