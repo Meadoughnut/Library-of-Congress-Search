@@ -32,6 +32,13 @@ The **Library of Congress Search Tool** is a web application that allows users t
   - The results are displayed on the page using data from the `results` property of the API response.
   - The page includes a search form, allowing users to perform new searches directly without being redirected.
 
+
+## Screenshot of pages
+- ![Homepage Screenshot](./assets/screenshotL/mainpage.png)
+- ![Resultpage Screenshot](./assets/screenshotL/resultpage.png)
+
+
+
 ## How to Use
 
 ### Prerequisites
