@@ -5,11 +5,12 @@
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Project Structure](#project-structure)
-4. [How to Use](#how-to-use)
+4. [Screenshot of pages](#screenshot-of-pages)
+5. [How to Use](#how-to-use)
     - [Prerequisites](#prerequisites)
     - [Steps to Use](#steps-to-use)
-5. [Technical Implementation](#technical-implementation)
-6. [License](#license)
+6. [Technical Implementation](#technical-implementation)
+7. [License](#license)
 
 ## Project Overview
 
